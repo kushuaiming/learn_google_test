@@ -18,13 +18,17 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  hello_test
-  hello_test.cc
+  math_test
+  math_test.cc
 )
 target_link_libraries(
-  hello_test
+  math_test
   GTest::gtest_main
+)
+target_include_directories(math_test
+    PRIVATE 
+        ${PROJECT_SOURCE_DIR}/
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(math_test)
